@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আই. টি জোন কম্পিউটার এন্ড ট্রেনিং সেন্টার - Premium IT & Online Services</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts: Noto Sans Bengali for Perfect Bengali Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans Bengali', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                        corporate: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                        }
+                    },
+                    animation: {
+                        blob: "blob 15s infinite", /* সফট এনিমেশনের জন্য সময় বাড়ানো হয়েছে */
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate3d(0px, 0px, 0px) scale(1)" },
+                            "33%": { transform: "translate3d(30px, -50px, 0px) scale(1.05)" },
+                            "66%": { transform: "translate3d(-20px, 20px, 0px) scale(0.95)" },
+                            "100%": { transform: "translate3d(0px, 0px, 0px) scale(1)" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            overflow-x: hidden;
+            /* সফট গ্লাসের জন্য হালকা বেস ব্যাকগ্রাউন্ড */
+            background-color: #f1f5f9; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Soft Glass Base Classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(8px); /* ব্লার কমিয়ে সফট করা হয়েছে */
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.03); /* সফট শ্যাডো */
+            /* 120fps GPU Boost */
+            transform: translate3d(0, 0, 0); 
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        .glass-panel-hover {
+            will-change: transform, box-shadow;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
+        }
+
+        .glass-panel-hover:hover {
+            background: rgba(255, 255, 255, 0.85); /* হোভারে আরও স্পষ্ট হবে */
+            border: 1px solid #ffffff;
+            transform: translate3d(0, -5px, 0); 
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08); /* ছড়ানো সফট শ্যাডো */
+        }
+
+        .glass-dark {
+            background: rgba(30, 41, 59, 0.85); /* ডার্ক গ্লাসকে সফট করা হয়েছে */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.15);
+            /* 120fps GPU Boost */
+            transform: translate3d(0, 0, 0); 
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* Optimize Section Scrolling */
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 800px;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.25); }
+
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased relative">
+
+    <!-- Soft Glass Pastel Blobs -->
+    <div class="fixed inset-0 w-full h-full z-[-1] overflow-hidden pointer-events-none bg-slate-50">
+        <div class="absolute top-[-10%] left-[-10%] w-[45rem] h-[45rem] bg-indigo-200/30 rounded-full blur-[100px] animate-blob transform-gpu will-change-transform"></div>
+        <div class="absolute top-[20%] right-[-10%] w-[40rem] h-[40rem] bg-blue-200/30 rounded-full blur-[100px] animate-blob animation-delay-2000 transform-gpu will-change-transform"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[50rem] h-[50rem] bg-purple-200/30 rounded-full blur-[100px] animate-blob animation-delay-4000 transform-gpu will-change-transform"></div>
+    </div>
+
+    <header class="glass-panel sticky top-0 z-50 transition-all duration-300 border-b-0 m-4 rounded-3xl">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="p-1.5 bg-white/80 backdrop-blur-md shadow-sm border border-white rounded-xl group-hover:scale-105 transition duration-300">
+                    <img src="https://i.postimg.cc/RqYjGYJr/logo.png" 
+                         alt="IT Zone Logo" 
+                         class="h-10 w-auto object-contain rounded-lg"
+                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/1e293b?text=IT';" />
+                </div>
+                <div class="flex flex-col">
+                    <h1 class="text-xl font-bold text-slate-800 tracking-tight">
+                        আই. টি জোন <span class="font-normal text-slate-600 text-sm block lg:inline">কম্পিউটার এন্ড ট্রেনিং সেন্টার</span>
+                    </h1>
+                </div>
+            </a>
+
+            <!-- Desktop Nav & Action -->
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex gap-6 font-medium text-slate-700">
+                    <a href="#features" class="hover:text-primary-600 transition">বৈশিষ্ট্য</a>
+                    <a href="#courses" class="hover:text-primary-600 transition">কোর্সসমূহ</a>
+                    <a href="#services" class="hover:text-primary-600 transition">সেবাসমূহ</a>
+                </nav>
+                <a href="#contact" class="glass-dark text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800/80 transition-all transform hover:scale-105">
+                    যোগাযোগ করুন
+                </a>
+            </div>
+            
+            <!-- Mobile Action -->
+            <div class="md:hidden">
+                 <a href="#contact" class="glass-dark text-white px-4 py-2 rounded-full text-sm font-medium">
+                    যোগাযোগ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-slate-700 text-sm font-medium shadow-sm">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                নারায়ণগঞ্জের বিশ্বস্ত কম্পিউটার শিক্ষা ও সেবাকেন্দ্র
+            </div>
+            
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-800 tracking-tight leading-tight max-w-4xl mx-auto drop-shadow-sm">
+                ক্যারিয়ার গড়ুন <br class="hidden sm:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">আধুনিক আইটি স্কিলের</span> সাথে
+            </h2>
+            
+            <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+                প্রফেশনাল কম্পিউটার ট্রেনিং থেকে শুরু করে সকল প্রকার জরুরি অনলাইন সেবা পাচ্ছেন এক ছাদের নিচে, দ্রুত ও নির্ভুলভাবে।
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+                <button onclick="document.getElementById('courses').scrollIntoView()" class="glass-dark text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                    কোর্সসমূহ দেখুন <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button onclick="document.getElementById('services').scrollIntoView()" class="glass-panel text-slate-800 hover:bg-white/60 px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                    অনলাইন সেবাসমূহ
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-16 scroll-mt-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-slate-800 drop-shadow-sm">আমাদের বৈশিষ্ট্য</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel glass-panel-hover p-8 rounded-[2rem] transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-white/60 shadow-sm text-indigo-600 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">দক্ষ গাইডেন্স</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-medium">অভিজ্ঞ প্রশিক্ষকের মাধ্যমে হাতে-কলমে প্র্যাকটিক্যাল ক্লাস। প্রতিটি শিক্ষার্থীর প্রতি বিশেষ মনোযোগ।</p>
+                </div>
+                
+                <div class="glass-panel glass-panel-hover p-8 rounded-[2rem] transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-white/60 shadow-sm text-cyan-600 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">দ্রুতগতির সেবা</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-medium">উচ্চ গতির ইন্টারনেট ও আধুনিক কম্পিউটারের মাধ্যমে যেকোনো অনলাইন আবেদন ও প্রিন্টিং দ্রুত সম্পন্ন করা হয়।</p>
+                </div>
+                
+                <div class="glass-panel glass-panel-hover p-8 rounded-[2rem] transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-white/60 shadow-sm text-emerald-600 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">বন্ধুত্বপূর্ণ পরিবেশ</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-medium">গ্রাহকদের যেকোনো সমস্যা বা তথ্যের জন্য আমরা আন্তরিক। কাজের ১০০% নির্ভুলতার নিশ্চয়তা।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="py-20 scroll-mt-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-800 drop-shadow-sm">প্রফেশনাল কোর্সসমূহ</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Course 1 -->
+                <div class="glass-panel p-8 rounded-[2.5rem] relative overflow-hidden flex flex-col justify-between group">
+                    <div class="relative z-10">
+                        <span class="inline-block px-4 py-1.5 bg-white/60 backdrop-blur-sm text-indigo-700 font-bold text-xs rounded-full mb-5 shadow-sm border border-white/50">৩ মাস / ৬ মাস</span>
+                        <h4 class="text-2xl font-bold text-slate-800 mb-4">বেসিক কম্পিউটার ও অফিস অ্যাপ্লিকেশন</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
+                            MS Word, MS Excel, MS PowerPoint সহ অফিসিয়াল কাজের পূর্ণাঙ্গ প্রস্তুতি। ইন্টারনেট ব্রাউজিং, ইমেইল এবং বেসিক হার্ডওয়্যার ধারণা।
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-slate-800 font-medium">
+                                <div class="w-7 h-7 rounded-full bg-emerald-100/80 text-emerald-600 flex items-center justify-center text-xs shadow-sm"><i class="fa-solid fa-check"></i></div>
+                                শতভাগ প্র্যাকটিক্যাল ক্লাস
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-slate-800 font-medium">
+                                <div class="w-7 h-7 rounded-full bg-emerald-100/80 text-emerald-600 flex items-center justify-center text-xs shadow-sm"><i class="fa-solid fa-check"></i></div>
+                                কোর্স শেষে সার্টিফিকেট প্রদান
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="sendCourseQuery('বেসিক কম্পিউটার ও অফিস অ্যাপ্লিকেশন')" class="w-full glass-dark text-white font-semibold py-4 rounded-2xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 relative z-10">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> কোর্সে ভর্তি হতে মেসেজ দিন
+                    </button>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="glass-panel p-8 rounded-[2.5rem] relative overflow-hidden flex flex-col justify-between group">
+                    <div class="relative z-10">
+                        <span class="inline-block px-4 py-1.5 bg-white/60 backdrop-blur-sm text-pink-700 font-bold text-xs rounded-full mb-5 shadow-sm border border-white/50">১ মাস / ২ মাস</span>
+                        <h4 class="text-2xl font-bold text-slate-800 mb-4">প্রফেশনাল টাইপিং মাস্টার কোর্স</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
+                            বিজয় ৫২ (Bijoy) ও অভ্র (Avro) কী-বোর্ড লেআউটে দ্রুত ও নির্ভুল বাংলা এবং ইংরেজি টাইপিং শেখার স্পেশাল শর্টকাট টেকনিক।
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-slate-800 font-medium">
+                                <div class="w-7 h-7 rounded-full bg-emerald-100/80 text-emerald-600 flex items-center justify-center text-xs shadow-sm"><i class="fa-solid fa-check"></i></div>
+                                সরকারি চাকরির টেস্ট প্রস্তুতি
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-slate-800 font-medium">
+                                <div class="w-7 h-7 rounded-full bg-emerald-100/80 text-emerald-600 flex items-center justify-center text-xs shadow-sm"><i class="fa-solid fa-check"></i></div>
+                                টাইপিং স্পিড বৃদ্ধির ১০০% গ্যারান্টি
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="sendCourseQuery('প্রফেশনাল টাইপিং মাস্টার কোর্স')" class="w-full glass-dark text-white font-semibold py-4 rounded-2xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 relative z-10">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> কোর্সে ভর্তি হতে মেসেজ দিন
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 scroll-mt-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-800 drop-shadow-sm">কম্পিউটার ও অনলাইন সেবাসমূহ</h3>
+                <p class="text-slate-600 mt-3 font-medium">যেকোনো সেবার জন্য কার্ডে ক্লিক করে সরাসরি আমাদের জানান</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Service Cards Iteration -->
+            <div onclick="sendServiceQuery('অনলাইন আবেদন ও ফর্ম ফিলাপ')" class="glass-panel glass-panel-hover p-6 rounded-[2rem] cursor-pointer group flex flex-col h-full">
+                <div class="w-12 h-12 bg-white/70 shadow-sm rounded-2xl flex items-center justify-center text-indigo-600 text-xl mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <h4 class="text-lg font-bold text-slate-800 mb-2 leading-tight">অনলাইন আবেদন ও ফর্ম ফিলাপ</h4>
+                <p class="text-slate-600 text-sm mb-5 font-medium">চাকরির আবেদন, ভর্তি ফর্ম ফিলাপ, স্কলারশিপ ও ভিসা রিলেটেড অনলাইন কাজ।</p>
+                <div class="mt-auto flex items-center gap-2 text-indigo-600 text-sm font-bold group-hover:gap-3 transition-all">
+                    যোগাযোগ করুন <i class="fa-brands fa-whatsapp text-lg"></i>
+                </div>
+            </div>
+
+            <div onclick="sendServiceQuery('ফটোকপি, প্রিন্ট ও স্ক্যানিং')" class="glass-panel glass-panel-hover p-6 rounded-[2rem] cursor-pointer group flex flex-col h-full">
+                    <div class="w-12 h-12 bg-white/70 shadow-sm rounded-2xl flex items-center justify-center text-pink-600 text-xl mb-5 group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-print"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 leading-tight">ফটোকপি, প্রিন্ট ও স্ক্যানিং</h4>
+                    <p class="text-slate-600 text-sm mb-5 font-medium">হাই-কোয়ালিটি কালার/সাদাকালো প্রিন্ট, ফটোকপি এবং হাই-রেজুলেশন স্ক্যানিং।</p>
+                    <div class="mt-auto flex items-center gap-2 text-pink-600 text-sm font-bold group-hover:gap-3 transition-all">
+                        যোগাযোগ করুন <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                </div>
+
+                <div onclick="sendServiceQuery('জন্মনিবন্ধন ও এনআইডি সেবা')" class="glass-panel glass-panel-hover p-6 rounded-[2rem] cursor-pointer group flex flex-col h-full">
+                    <div class="w-12 h-12 bg-white/70 shadow-sm rounded-2xl flex items-center justify-center text-cyan-600 text-xl mb-5 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 leading-tight">জন্মনিবন্ধন ও এনআইডি সেবা</h4>
+                    <p class="text-slate-600 text-sm mb-5 font-medium">NID সংশোধন, নতুন কপি ডাউনলোড, জন্ম নিবন্ধন আবেদন ও তথ্য যাচাই।</p>
+                    <div class="mt-auto flex items-center gap-2 text-cyan-600 text-sm font-bold group-hover:gap-3 transition-all">
+                        যোগাযোগ করুন <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                </div>
+
+                <div onclick="sendServiceQuery('প্রফেশনাল টাইপিং')" class="glass-panel glass-panel-hover p-6 rounded-[2rem] cursor-pointer group flex flex-col h-full">
+                    <div class="w-12 h-12 bg-white/70 shadow-sm rounded-2xl flex items-center justify-center text-amber-600 text-xl mb-5 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-keyboard"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 leading-tight">প্রফেশনাল টাইপিং (বাংলা/ইংরেজি)</h4>
+                    <p class="text-slate-600 text-sm mb-5 font-medium">চিঠি, প্রশ্নপত্র, বই, এফিডেভিট ও বিভিন্ন চুক্তিপত্রের দ্রুত ও নির্ভুল কম্পোজিশন।</p>
+                    <div class="mt-auto flex items-center gap-2 text-amber-600 text-sm font-bold group-hover:gap-3 transition-all">
+                        যোগাযোগ করুন <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                </div>
+
+                <div onclick="sendServiceQuery('সিভি রাইটিং ও ডিজাইন')" class="glass-panel glass-panel-hover p-6 rounded-[2rem] cursor-pointer group flex flex-col h-full">
+                    <div class="w-12 h-12 bg-white/70 shadow-sm rounded-2xl flex items-center justify-center text-purple-600 text-xl mb-5 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 leading-tight">সিভি (CV) রাইটিং ও ডিজাইন</h4>
+                    <p class="text-slate-600 text-sm mb-5 font-medium">চাকরির জন্য প্রফেশনাল স্ট্যান্ডার্ড বায়োডাটা বা জীবনবৃত্তান্ত তৈরি ও ডিজাইন।</p>
+                    <div class="mt-auto flex items-center gap-2 text-purple-600 text-sm font-bold group-hover:gap-3 transition-all">
+                        যোগাযোগ করুন <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                </div>
+
+                <div onclick="sendServiceQuery('ছবি তোলা ও ব্যাকগ্রাউন্ড পরিবর্তন')" class="glass-panel glass-panel-hover p-6 rounded-[2rem] cursor-pointer group flex flex-col h-full">
+                    <div class="w-12 h-12 bg-white/70 shadow-sm rounded-2xl flex items-center justify-center text-teal-600 text-xl mb-5 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 leading-tight">ছবি তোলা ও ব্যাকগ্রাউন্ড পরিবর্তন</h4>
+                    <p class="text-slate-600 text-sm mb-5 font-medium">পাসপোর্ট ও স্ট্যাম্প সাইজের ছবি তৈরি, ড্রেস চেঞ্জ, ব্যাকগ্রাউন্ড রিমুভ ও প্রিন্ট।</p>
+                    <div class="mt-auto flex items-center gap-2 text-teal-600 text-sm font-bold group-hover:gap-3 transition-all">
+                        যোগাযোগ করুন <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 scroll-mt-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-dark rounded-[3rem] p-8 md:p-12 shadow-2xl border border-white/10 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-4">যোগাযোগ করুন</h3>
+                            <p class="text-slate-300 text-sm md:text-base leading-relaxed font-medium">
+                                কোর্সে ভর্তি হওয়া, অনলাইনে কাজ করানো বা যেকোনো তথ্যের জন্য আমাদের ঠিকানায় আসুন অথবা সরাসরি কল বা মেসেজ দিন।
+                            </p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-5 glass-panel !bg-white/10 !border-white/10 p-4 rounded-2xl">
+                                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
+                                    <i class="fa-solid fa-location-dot text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white font-bold mb-1">আমাদের ঠিকানা</h5>
+                                    <p class="text-slate-300 text-sm">আই. টি জোন কম্পিউটার এন্ড ট্রেনিং সেন্টার, নারায়ণগঞ্জ</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-5 glass-panel !bg-white/10 !border-white/10 p-4 rounded-2xl">
+                                <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white font-bold mb-1">মোবাইল ও হোয়াটসঅ্যাপ</h5>
+                                    <a href="https://wa.me/8801531280403" target="_blank" class="text-slate-300 hover:text-emerald-400 text-sm transition">+880 1531-280403</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-5 glass-panel !bg-white/10 !border-white/10 p-4 rounded-2xl">
+                                <div class="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                                    <i class="fa-regular fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white font-bold mb-1">অফিস সময়</h5>
+                                    <p class="text-slate-300 text-sm">প্রতিদিন সকাল ৯:০০ টা - রাত ৯:০০ টা</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Card -->
+                    <div class="relative group cursor-pointer h-[350px] rounded-[2rem] overflow-hidden shadow-lg border border-white/20" onclick="window.open('https://maps.app.goo.gl/QNicSNpaKmfbzR2F8', '_blank')">
+                        <div class="absolute inset-0 bg-slate-800 bg-[url('https://placehold.co/800x600/0f172a/334155?text=Map+Location')] bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent backdrop-blur-[2px]"></div>
+                        
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end items-center text-center">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-full flex items-center justify-center text-2xl shadow-lg mb-4 group-hover:bg-red-500 transition-colors duration-300">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-2">গুগল ম্যাপে লোকেশন</h4>
+                            <p class="text-slate-300 text-sm mb-6">সঠিক অবস্থান দেখতে ক্লিক করুন</p>
+                            <span class="inline-block glass-panel !bg-white/20 !border-white/30 text-white font-bold px-6 py-3 rounded-full text-sm group-hover:!bg-white group-hover:text-slate-900 transition-colors">
+                                ম্যাপ ওপেন করুন <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass-panel border-b-0 border-x-0 border-t-white/50 py-10 mt-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <img src="https://i.postimg.cc/RqYjGYJr/logo.png" 
+                     alt="IT Zone Logo" 
+                     class="h-9 w-auto rounded-xl bg-white/80 p-1 shadow-sm border border-white/50" />
+                <span class="text-slate-800 font-bold text-lg tracking-wide">আই. টি জোন</span>
+            </div>
+            <p class="text-slate-600 text-sm font-medium text-center md:text-left">
+                &copy; <span id="year"></span> আই. টি জোন কম্পিউটার এন্ড ট্রেনিং সেন্টার. All rights reserved.
+            </p>
+            <div class="flex gap-4">
+                <a href="https://wa.me/8801531280403" target="_blank" class="w-12 h-12 rounded-full glass-panel !bg-white/60 flex items-center justify-center text-emerald-600 hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/8801531280403" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-[100] w-14 h-14 bg-emerald-500/90 backdrop-blur-md border border-emerald-400 text-white rounded-full flex items-center justify-center text-3xl shadow-[0_8px_32px_rgba(16,185,129,0.4)] hover:scale-110 transition-all duration-300 group">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const wappNumber = "8801531280403";
+
+        function sendCourseQuery(course) {
+            try {
+                const text = "আসসালামু আলাইকুম, আমি আই. টি জোন কম্পিউটার এন্ড ট্রেনিং সেন্টার-এর '" + course + "' কোর্সে ভর্তি হতে আগ্রহী। বিস্তারিত জানতে চাচ্ছি।";
+                window.open(`https://api.whatsapp.com/send?phone=${wappNumber}&text=${encodeURIComponent(text)}`, '_blank');
+            } catch (e) {
+                console.error("Link creation failed", e);
+            }
+        }
+
+        function sendServiceQuery(service) {
+            try {
+                const text = "আসসালামু আলাইকুম, আমার '" + service + "' রিলেটেড কাজ করানো প্রয়োজন। বিস্তারিত জানতে চাচ্ছি।";
+                window.open(`https://api.whatsapp.com/send?phone=${wappNumber}&text=${encodeURIComponent(text)}`, '_blank');
+            } catch (e) {
+                console.error("Link creation failed", e);
+            }
+        }
+    </script>
+</body>
+</html>
